@@ -4,18 +4,17 @@ Created on 12-Jun-2018
 @author: rahul.s
 '''
 
-import os
-
 class bashutil:
     def init_history(self,histFilePath):
-        f=os.open(histFilePath, os.O_RDONLY)
-        fl=os.fdopen(f)
-
         history=[]
-        for cmd in fl:
-            history.append(cmd.rstrip())
+        with open(histFilePath, 'r') as f:
+            for line in f:
+                history.append(line)
 
-        os.close(f)
-        print history
         return history
+    
+    def write_history(self,histFilePath,historyArray):
+        for line in historyArray:
+            with open(histFilePath,'a') as f:
+                f.write(line)
         
