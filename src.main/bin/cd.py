@@ -7,7 +7,7 @@ Created on 12-Jun-2018
 import os
 import sys
 
-print "Before - "+os.getcwd()
+print "Before - " + os.getcwd()
 
 if sys.argv.__len__() is 1:
     os.chdir(os.getenv('HOME'))

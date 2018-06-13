@@ -4,12 +4,14 @@ Created on 12-Jun-2018
 @author: rahul.s
 '''
 import unittest
+import sys
 
 
 class Test(unittest.TestCase):
 
     def testName(self):
-        pass
+        sys.argv = ['..']
+        execfile("../../src.main/bin/cd.py")
 
 
 if __name__ == "__main__":

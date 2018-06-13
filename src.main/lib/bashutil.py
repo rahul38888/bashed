@@ -17,4 +17,3 @@ class bashutil:
         for line in historyArray:
             with open(histFilePath,'a') as f:
                 f.write(line)
-        
